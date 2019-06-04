@@ -1,8 +1,8 @@
 package parsing
 
 class JathParser {
-    private val keywords = Array(2, init = {"fnc"; "var"})
-    private val operators = Array(1, init = {"+"; "-"; "++"; "--"; "*"; "/"})
+    private val keywords = arrayOf("fnc", "var")
+    private val operators = arrayOf("+", "-", "++", "--", "*", "/", ".", "(", ")")
     private val reString = "(((=)|(;)|(\\.)|(\\[)|(\\])|(\\()|(\\))|(\\{)|(\\})))|(((\\d+)\\.(\\d+))|(\\d+))|((\\\"\".+\\\"\")|('.+')|(\\\"\"\\\"\")|(''))|(\\w+)|([\\w_\\d-]+){1,}"
     fun Parse(code : String): Array<ParsedToken>{
         val regex = Regex(reString, RegexOption.MULTILINE)
